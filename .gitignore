@@ -1,0 +1,7 @@
+/.nrepl-port
+/public/js
+/public/vendor
+/node_modules
+/.shadow-cljs
+/.clj-kondo
+/.lsp

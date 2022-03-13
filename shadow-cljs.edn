@@ -1,0 +1,14 @@
+{:source-paths ["src"]
+
+ ;; I'm using 0.27.4 because Emacs CIDER 1.2.0 wants it.
+ :dependencies [[cider/cider-nrepl "0.27.4"]]
+
+ :builds
+ {:app
+  {:target     :browser
+   :output-dir "public/js"
+   :asset-path "/js"
+   :modules    {:app {:entries [main.core]}}}}
+
+ :dev-http
+ {3000 {:root "public"}}}
