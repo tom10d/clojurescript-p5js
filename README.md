@@ -40,6 +40,6 @@ basis.
 
 ## License
 
-Copyright (c) 2022 tom10d
+Copyright (c) 2022 Tom
 
 Distributed under the MIT License.
