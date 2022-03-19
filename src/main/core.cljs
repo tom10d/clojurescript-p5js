@@ -1,5 +1,5 @@
 (ns main.core
-  (:require [main.snake :as demo]))
+  (:require [main.minesweeper :as demo]))
 
 ;; Init function that is exported into global space.
 ;; Called from index.html with main.core.init_BANG_()
