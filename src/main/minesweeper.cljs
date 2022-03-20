@@ -68,7 +68,8 @@
       (@*bombs rowcol) (reset! *opened (-> (map :rowcol @*cells) set))
       :else
       (->> (open rowcol @*bombs) (swap! *opened set/union)))
-    (js/redraw)))
+    (js/redraw))
+  false)
 
 (defn setup []
   (game-new (config))
