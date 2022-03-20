@@ -57,11 +57,12 @@
 
 (defn game-over? [] (or (game-lost?) (game-won?)))
 
-(defn xy->rowcol [x y cell-size]
-  (valid [(quot y cell-size) (quot x cell-size)]))
+(defn xy->rowcol [x y {:keys [cell-size canvas-size]}]
+  (when (and (< 0 x canvas-size) (< 0 y canvas-size))
+    (valid [(quot y cell-size) (quot x cell-size)])))
 
 (defn mousePressed []
-  (when-let [rowcol (xy->rowcol js/mouseX js/mouseY (:cell-size (config)))]
+  (when-let [rowcol (xy->rowcol js/mouseX js/mouseY (config))]
     (cond
       (game-over?) (game-new (config))
       (@*bombs rowcol) (reset! *opened (-> (map :rowcol @*cells) set))
